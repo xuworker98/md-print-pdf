@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>示例技术报告 版式规范样张</title>
+<style>
+  @page { size: A4; margin: 20mm 18mm 22mm 18mm; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    margin: 0;
+    font-family: "Times New Roman", SimSun, "宋体", serif;
+    font-size: 10.5pt; line-height: 1.6; color: #1A1A1A;
+  }
+  h1, h2, h3, h4 { font-family: SimHei, "黑体", "Times New Roman", serif; margin: 0; }
+  p { margin: 0 0 0.35em 0; text-indent: 2em; }
+  p.noindent { text-indent: 0; }
+  a { color: #14508C; text-decoration: none; }
+
+  .cover { min-height: 250mm; page-break-after: always; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+  .cover .kicker { font-size: 10pt; color: #6B7280; letter-spacing: 0.15em; margin-bottom: 22mm; }
+  .cover .title { font-size: 24pt; font-weight: bold; color: #14508C; line-height: 1.35; }
+  .cover .rule { width: 46mm; height: 0; border-top: 1.5pt solid #14508C; margin: 10mm 0; }
+  .cover .sub { font-size: 13pt; color: #444444; }
+  .cover .meta { margin-top: 34mm; font-size: 10pt; color: #444444; line-height: 2; }
+  .cover .meta b { font-family: SimSun, "宋体", serif; }
+
+  .toc-page { page-break-after: always; }
+  .toc-page h2 { font-size: 13.5pt; color: #14508C; padding-bottom: 4px; border-bottom: 0.75pt solid #B5D4F4; }
+  .toc-list { margin-top: 8mm; font-size: 10.5pt; line-height: 2.4; }
+  .toc-list .lv1 { color: #14508C; font-weight: bold; }
+  .toc-list .lv2 { color: #14508C; padding-left: 3em; }
+
+  .sec-h1 { font-size: 17pt; color: #14508C; padding-bottom: 5px; border-bottom: 1.5pt solid #14508C; margin: 0 0 5mm 0; }
+  .sec-h2 { font-size: 13.5pt; color: #14508C; padding-bottom: 3px; border-bottom: 0.75pt solid #B5D4F4; margin: 7mm 0 3.5mm 0; }
+  .sec-h3 { font-size: 11.5pt; color: #14508C; margin: 5mm 0 2.5mm 0; }
+  .sec-h4 { font-size: 10.5pt; color: #1A1A1A; margin: 3.5mm 0 2mm 0; }
+
+  ul.doc { margin: 0.2em 0 0.6em 0; padding-left: 2em; }
+  ul.doc li { line-height: 1.55; margin-bottom: 0.25em; }
+
+  .tabcap { font-size: 10pt; color: #1A1A1A; margin: 4mm 0 1.5mm 0; text-indent: 0; break-after: avoid; page-break-after: avoid; }
+  .tabcap b, .figcap b { font-weight: bold; }
+  table.doc { width: 100%; border-collapse: collapse; font-size: 9.5pt; font-family: SimSun, "宋体", serif; }
+  table.doc thead { display: table-header-group; }
+  table.doc th { background: #E6F1FB; color: #14508C; font-weight: bold; text-align: left; padding: 4px 7px; border-bottom: 1pt solid #14508C; }
+  table.doc td { padding: 4px 7px; color: #1A1A1A; border-bottom: 0.5pt solid #D8DEE6; vertical-align: top; }
+
+  .box { margin: 4mm 0; padding: 8px 12px; font-size: 10pt; line-height: 1.65; break-inside: avoid; page-break-inside: avoid; }
+  .box p { text-indent: 0; margin: 0 0 0.2em 0; }
+  .box-abstract { background: #F4F8FC; border-left: 3pt solid #14508C; }
+  .box-tip { background: #FDF6E3; border-left: 3pt solid #A16207; }
+  .box-warn { background: #FDECEA; border-left: 3pt solid #B3261E; }
+  .box-list { background: #F1EFE8; border-left: 3pt solid #888780; font-size: 9.5pt; color: #444444; }
+  .box-title { font-family: SimSun, "宋体", serif; font-weight: bold; }
+
+  .figure { text-align: center; margin: 4mm 0 0 0; page-break-inside: avoid; }
+  .figure svg { max-width: 100%; }
+  .figcap { font-size: 10pt; color: #1A1A1A; text-align: center; margin: 1.5mm 0 0 0; text-indent: 0; }
+  .fignote { background: #F7F8FA; border-left: 2pt solid #9AA0A6; padding: 6px 10px; font-size: 9.5pt; color: #444444; line-height: 1.6; margin: 2mm 0 4mm 0; text-indent: 0; }
+
+  pre.diagram { background: #F6F8FA; border-left: 2pt solid #D0D7DE; padding: 6px 10px; margin: 3mm 0; font-family: Consolas, "Courier New", monospace; font-size: 9pt; line-height: 1.5; color: #1A1A1A; white-space: pre; break-inside: avoid; }
+
+  .ok { color: #1D9E75; }
+  .src { color: #BA7517; }
+  .warn { color: #B3261E; }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="kicker">示例文档　·　可公开</div>
+  <div class="title">示例技术报告<br>版式规范样张</div>
+  <div class="rule"></div>
+  <div class="sub">配色与内容要素规范（评审稿）</div>
+  <div class="meta">
+    <div><b>版本</b>　V1.0 样张　｜　<b>编制日期</b>　2026-09-17</div>
+    <div><b>编制</b>　通信民工　｜　<b>适用范围</b>　正式产出物的打印版排版</div>
+  </div>
+</section>
+
+<section class="toc-page">
+  <h2>目录</h2>
+  <div class="toc-list">
+    <div class="lv1"><a href="#p1">第一篇　版式规范总览</a></div>
+    <div class="lv2"><a href="#c1">第一章　标题与正文版式</a></div>
+    <div class="lv2"><a href="#c2">第二章　内容要素与图表规范</a></div>
+    <div class="lv1"><a href="#ap">附录 A　规范自检清单</a></div>
+  </div>
+</section>
+
+<main>
+
+  <div class="box box-abstract">
+    <p><span class="box-title">用途</span>：① 打印版 PDF 的排版依据　② 评审时的逐项对照基准　③ 后续文档复用的模板来源</p>
+    <p><span class="box-title">核验规则</span>：<span class="ok">✅</span> = 已按规范落地并经实测核验；<span class="src">🔶</span> = 规范已定但未逐项实测。未核验项不入正文，集中列于附录自检清单。</p>
+    <p><span class="box-title">引用规范</span>：跨文档引用同类要素时，须逐处标注来源文档与版本号。同一句话里出现两套口径，结论即失效。</p>
+  </div>
+
+  <h1 class="sec-h1" id="p1">第一篇　版式规范总览</h1>
+
+  <h2 class="sec-h2" id="c1">第一章　标题与正文版式</h2>
+
+  <h3 class="sec-h3">1.1　四级标题体系</h3>
+  <p>标题共分四级，全部使用同一主色，层级由<b>字号</b>与<b>装饰线</b>两条线索共同承担：篇标题 17pt 配 1.5pt 主色下线；章标题 13.5pt 配 0.75pt 浅蓝下线；节标题 11.5pt 不加装饰线；目标题 10.5pt 改用正文色。 <span class="ok">✅</span></p>
+  <p>之所以不用颜色区分层级，是因为同色系的深浅在黑白打印时几乎不可辨。早期采用的"主蓝＋青绿"双色方案中，两色灰度仅差约 10 阶，灰度打印后完全同色，层级信息全部丢失。改为单色体系后，字号差与装饰线成为唯一可靠线索。</p>
+
+  <h3 class="sec-h3">1.2　正文与字体</h3>
+  <p>正文采用宋体 10.5pt，行距 1.6，首行缩进 2 字符，两端对齐。字号与行距的组合以"长时间阅读不疲劳"为准；缩进则用于区分段落起止，避免两端对齐造成的段间混淆。</p>
+
+  <h4 class="sec-h4">1.2.1　首行缩进的适用范围</h4>
+  <p>缩进只作用于正文段落。框体内段落、图题表题、图注与自检表均不缩进——这些要素本身已有底色或对齐方式作为边界标识，再加缩进反而破坏对齐。 <span class="src">🔶</span></p>
+
+  <div class="box box-warn">
+    <p><span class="box-title">常见误区</span>：把缩进写成全局规则，会让题注与框体内容一起右移，视觉上出现"参差不齐"的对齐错误。正确做法是全局设缩进、在框体与题注处显式清零。</p>
+  </div>
+
+  <h3 class="sec-h3">1.3　字体矩阵</h3>
+  <p>元素与字体的对应关系固定如下。其中"英文与数字"一行最容易出错：若不加处理，中文字体中的西文字形会破坏数字的等宽对齐。</p>
+
+  <p class="tabcap"><b>表 1-1</b>　元素—字体—字重矩阵</p>
+  <table class="doc">
+    <thead>
+    <tr>
+      <th style="width:22%">元素</th>
+      <th style="width:30%">字体族</th>
+      <th style="width:14%">字重</th>
+      <th style="width:34%">说明</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td>篇 / 章 / 节 / 目标题</td><td>黑体</td><td>加粗</td><td>标题层的唯一加粗主体</td></tr>
+    <tr><td>表头单元格</td><td>宋体</td><td>加粗</td><td>与数据行区分</td></tr>
+    <tr><td>正文普通文字</td><td>宋体</td><td>不加粗</td><td>—</td></tr>
+    <tr><td>正文加粗内容</td><td>宋体</td><td>加粗</td><td>忠于源文件，不擅自增删字重</td></tr>
+    <tr><td>表题 / 图题 / 图注</td><td>宋体</td><td>不加粗</td><td>序号部分可加粗</td></tr>
+    <tr><td>英文与数字</td><td>Times New Roman</td><td>随所在元素</td><td>置于中文字体之前生效</td></tr>
+    <tr><td>代码块</td><td>等宽字体</td><td>不加粗</td><td>保留原始空格与缩进</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box box-list">
+    <p><span class="box-title">本章配图</span>：图 1-1 文档生成链路示意</p>
+  </div>
+
+  <h2 class="sec-h2" id="c2">第二章　内容要素与图表规范</h2>
+
+  <h3 class="sec-h3">2.1　四类框体</h3>
+  <p>框体共四类，用"底色＋左竖线"区分用途：摘要框承载范围与规则声明，提示框承载辅助理解，警示框承载风险提醒，图注框承载对图的补充说明。四类框体不叠加使用，同一段落只允许出现一种。</p>
+
+  <div class="box box-abstract">
+    <p><span class="box-title">关键结论</span>：框体只承载结论与提醒，不承载论证过程。论证必须留在正文段落里——把推导搬进框体，会让读者跳过推理只看结论。</p>
+  </div>
+
+  <div class="box box-tip">
+    <p><span class="box-title">通俗理解</span>：把框体想成文档页边贴的便签纸，它只负责提醒你"这里有件事"，不负责把事情讲完。</p>
+  </div>
+
+  <h3 class="sec-h3">2.2　图与图注</h3>
+  <p>图题置于图的下方、表题置于表的上方，两者序号均按章编排。图注用于补充图中无法自明的信息，例如被省略的次要元素、数据的口径或适用边界。</p>
+
+  <div class="figure">
+    <svg viewBox="0 0 620 120" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="34" width="120" height="58" rx="6" fill="#E6F1FB" stroke="#14508C" stroke-width="0.75"/>
+      <text x="64" y="58" text-anchor="middle" font-family="SimHei" font-size="11" fill="#14508C">Markdown</text>
+      <text x="64" y="76" text-anchor="middle" font-family="SimSun" font-size="9" fill="#1A1A1A">源文件</text>
+
+      <rect x="168" y="34" width="120" height="58" rx="6" fill="#F4F8FC" stroke="#85B7EB" stroke-width="0.75"/>
+      <text x="228" y="58" text-anchor="middle" font-family="SimHei" font-size="11" fill="#14508C">HTML</text>
+      <text x="228" y="76" text-anchor="middle" font-family="SimSun" font-size="9" fill="#1A1A1A">打印版样式</text>
+
+      <rect x="332" y="34" width="120" height="58" rx="6" fill="#F4F8FC" stroke="#85B7EB" stroke-width="0.75"/>
+      <text x="392" y="58" text-anchor="middle" font-family="SimHei" font-size="11" fill="#14508C">PDF</text>
+      <text x="392" y="76" text-anchor="middle" font-family="SimSun" font-size="9" fill="#1A1A1A">A4 定稿</text>
+
+      <rect x="496" y="34" width="120" height="58" rx="6" fill="#F1EFE8" stroke="#888780" stroke-width="0.75"/>
+      <text x="556" y="58" text-anchor="middle" font-family="SimHei" font-size="11" fill="#14508C">质检</text>
+      <text x="556" y="76" text-anchor="middle" font-family="SimSun" font-size="9" fill="#1A1A1A">告警汇总</text>
+
+      <line x1="124" y1="63" x2="168" y2="63" stroke="#9AA0A6" stroke-width="0.75" stroke-dasharray="3 2"/>
+      <path d="M168 63 L161 59.5 L161 66.5 Z" fill="#9AA0A6"/>
+      <text x="146" y="26" text-anchor="middle" font-family="SimSun" font-size="9" fill="#444444">转换</text>
+
+      <line x1="288" y1="63" x2="332" y2="63" stroke="#9AA0A6" stroke-width="0.75" stroke-dasharray="3 2"/>
+      <path d="M332 63 L325 59.5 L325 66.5 Z" fill="#9AA0A6"/>
+      <text x="310" y="26" text-anchor="middle" font-family="SimSun" font-size="9" fill="#444444">渲染</text>
+
+      <line x1="452" y1="63" x2="496" y2="63" stroke="#14508C" stroke-width="0.75"/>
+      <path d="M496 63 L489 59.5 L489 66.5 Z" fill="#14508C"/>
+      <text x="474" y="26" text-anchor="middle" font-family="SimSun" font-size="9" fill="#444444">校验</text>
+    </svg>
+  </div>
+  <p class="figcap"><b>图 1-1</b>　文档生成链路示意</p>
+  <div class="fignote"><b>图注</b>：本图为四段链路的示意，省略了链路中间的临时产物。需要强调的是，质检环节读取的是转换阶段输出的结构化诊断数据，而不是对成品 PDF 做图像识别——因此它能定位到源文件的行号，这一能力是排版问题可回溯的前提。</div>
+
+  <pre class="diagram">编号与交叉引用链路（示意）
+  图表编号   → 按章编排，形如"图 1-1""表 2-3"
+  交叉引用   → 占位符按标题文字回填编号
+  一致性校验 → 缺号、跳级、题注错位分别告警
+
+结论：编号由工具生成、人工只写标题文字，从机制上避免编号漂移。</pre>
+
+</main>
+
+<h1 class="sec-h1" id="ap" style="margin-top:8mm">附录 A　规范自检清单</h1>
+<p>本样张用于核对配色与内容要素规范是否落地。下表逐项列出要素、规范值与本页实际取值。</p>
+<p class="tabcap"><b>表 A-1</b>　样式规范自检表（节选）</p>
+<table class="doc">
+  <thead>
+  <tr>
+    <th style="width:26%">要素</th>
+    <th style="width:44%">规范值</th>
+    <th style="width:30%">备注</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr><td>篇标题 H1</td><td>黑体加粗 17pt，色 #14508C，下方 1.5pt 主线</td><td>见第一篇标题</td></tr>
+  <tr><td>章标题 H2</td><td>黑体加粗 13.5pt，色 #14508C，下方 0.75pt #B5D4F4</td><td>见第一章、第二章</td></tr>
+  <tr><td>节标题 H3</td><td>黑体加粗 11.5pt，色 #14508C（与章同色，靠字号分层）</td><td>见 1.1、2.1</td></tr>
+  <tr><td>目标题 H4</td><td>黑体加粗 10.5pt，色 #1A1A1A</td><td>见 1.2.1</td></tr>
+  <tr><td>正文段</td><td>宋体 10.5pt，色 #1A1A1A，行距 1.6，首行缩进 2 字符</td><td>全篇</td></tr>
+  <tr><td>表头</td><td>宋体加粗 9.5pt，色 #14508C，底 #E6F1FB，下边线 1pt</td><td>见表 1-1、表 A-1</td></tr>
+  <tr><td>表题 / 图题</td><td>宋体不加粗 10pt，色 #1A1A1A，序号加粗</td><td>表题在表上方，图题在图下方</td></tr>
+  <tr><td>图注</td><td>宋体 9.5pt，色 #444444，底 #F7F8FA，左竖线 2pt</td><td>见图 1-1 下方</td></tr>
+  <tr><td>页脚</td><td>宋体 8pt，色 #6B7280，横线在文字下方</td><td>本页可见</td></tr>
+  </tbody>
+</table>
+
+</body>
+</html>

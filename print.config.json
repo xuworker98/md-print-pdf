@@ -1,0 +1,136 @@
+{
+  "paper": {
+    "size": "A4",
+    "orientation": "portrait"
+  },
+  "margin": {
+    "top": "18mm",
+    "bottom": "22mm",
+    "left": "18mm",
+    "right": "18mm"
+  },
+  "typography": {
+    "baseFontSize": "10.5pt",
+    "lineHeight": 1.6,
+    "textAlign": "justify",
+    "h1Size": "17pt",
+    "h2Size": "13.5pt",
+    "h3Size": "11.5pt",
+    "h4Size": "10.5pt",
+    "tableFontSize": "9.5pt",
+    "captionFontSize": "10pt",
+    "noteFontSize": "9.5pt",
+    "codeFontSize": "9pt",
+    "paraSpacing": "2.6mm",
+    "firstLineIndent": "2em"
+  },
+  "accent": {
+    "primary": "#14508C",
+    "primaryLight": "#B5D4F4",
+    "tableHeadBg": "#E6F1FB",
+    "tableHeadLine": "#14508C",
+    "tableLine": "#D8DEE6",
+    "zebra": "#FAFBFC",
+    "zebraOn": false,
+    "quoteBg": "#F4F8FC",
+    "quoteBar": "#14508C",
+    "noteBg": "#F7F8FA",
+    "noteBar": "#9AA0A6",
+    "tipBg": "#FDF6E3",
+    "tipBar": "#A16207",
+    "warnBg": "#FDECEA",
+    "warnBar": "#B3261E",
+    "listBg": "#F1EFE8",
+    "listBar": "#888780",
+    "codeBg": "#F6F8FA",
+    "codeBar": "#D0D7DE",
+    "textPrimary": "#1A1A1A",
+    "textSecondary": "#444444",
+    "textMuted": "#6B7280",
+    "footerLine": "#DCDCDC",
+    "footerText": "#6B7280",
+    "coverRule": "#14508C",
+    "ok": "#1D9E75",
+    "src": "#BA7517",
+    "alert": "#B3261E"
+  },
+  "pageBreak": {
+    "chapterOnNewPage": true
+  },
+  "headerFooter": {
+    "preset": "title-pagefooter",
+    "docTitle": "",
+    "footerFormat": "第 {page} 页 / 共 {total} 页",
+    "footerLine": true,
+    "linePlacement": "below",
+    "lineColor": "#DCDCDC",
+    "fontSize": "10.5px",
+    "color": "#6B7280"
+  },
+  "cover": {
+    "enabled": true,
+    "title": "",
+    "subtitle": "",
+    "version": "",
+    "date": "",
+    "org": "",
+    "classification": "内部材料　·　注意保密",
+    "template": "classic",
+    "frontMatter": "none",
+    "maskFooter": true
+  },
+  "toc": {
+    "enabled": true,
+    "depth": 2,
+    "linkable": true,
+    "showPageNumber": false
+  },
+  "watermark": {
+    "enabled": false,
+    "text": "",
+    "opacity": 0.08,
+    "fontSize": "42pt",
+    "rotate": -30,
+    "color": "#000000"
+  },
+  "numbering": {
+    "auto": true,
+    "style": "chapter",
+    "headingAuto": false,
+    "headingCheck": true,
+    "headingScheme": ["一、", "1、", "1.1", "1.1.1"],
+    "figPrefixCn": "图",
+    "tabPrefixCn": "表",
+    "figPrefixEn": "Figure",
+    "tabPrefixEn": "Table"
+  },
+  "metadata": {
+    "title": "",
+    "author": "",
+    "subject": "",
+    "keywords": ""
+  },
+  "bookmarks": {
+    "enabled": true
+  },
+  "math": {
+    "mode": "auto",
+    "imageDir": ""
+  },
+  "fonts": {
+    "heading": "\"SimHei\", \"黑体\", \"Microsoft YaHei\", \"微软雅黑\", sans-serif",
+    "body": "\"Times New Roman\", \"SimSun\", \"宋体\", \"Microsoft YaHei\", \"微软雅黑\", serif",
+    "latin": "\"Times New Roman\", \"SimSun\", \"宋体\", serif",
+    "mono": "\"Consolas\", \"Courier New\", \"SimSun\", \"宋体\", monospace"
+  },
+  "warning": {
+    "levels": {
+      "font": "warn",
+      "image": "warn",
+      "math": "info",
+      "overflow": "warn",
+      "ref": "error",
+      "footnote": "info"
+    }
+  }
+}

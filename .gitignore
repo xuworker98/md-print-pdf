@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+
+# Node
+node_modules/
+package-lock.json
+
+# 中间产物（一律落系统临时目录；万一落进来也不入库）
+*.html
+!examples/*.html
+.edge-profile/
+*.diag.json
+*.qc.json
+
+# 临时与备份
+temp/
+output/
+*.bak
+*_backup.*
+.~lock.*
+
+# 系统杂项
+Thumbs.db
+.DS_Store
