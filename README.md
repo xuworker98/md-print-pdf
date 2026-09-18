@@ -138,7 +138,7 @@ python scripts/run.py --md in.md --out out.pdf --config my.config.json
 
 📞 联系方式 / Contact
 
-- **作者 Author**：通信民工（许景渊 / Jerry Xu）
+- **作者 Author**：通信民工（Jerry Xu）
 - **哔哩哔哩 Bilibili**：[@通信民工](https://space.bilibili.com/482597398)（UID：482597398）
 - **微信公众号 WeChat**：@通信民工（ComDesigner）
 - **QQ**：853665220（@qq.com）
